@@ -22,7 +22,7 @@ const UserProjects: React.FC<Props> = ({ token }) => {
       setProjects(data);
     };
     fetchProjectsList();
-  }, []);
+  });
 
   return (
     <Table size='sm' bordered hover responsive>

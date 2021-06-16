@@ -2,9 +2,9 @@ import React from 'react';
 import { useSelector } from '../hooks/useTypedSelector';
 import { Redirect, Route, RouteProps } from 'react-router-dom';
 
-interface PrivateRouteProps extends RouteProps {}
+interface PublicRouteProps extends RouteProps {}
 
-const PrivateRoute: React.FC<PrivateRouteProps> = ({
+const PublicRoute: React.FC<PublicRouteProps> = ({
   component: Component,
   ...rest
 }: any) => {
@@ -14,9 +14,9 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
     <Route
       {...rest}
       render={(props) =>
-        token ? <Component {...props} /> : <Redirect to='/' />
+        !token ? <Component {...props} /> : <Redirect to='/info' />
       }
     />
   );
 };
-export default PrivateRoute;
+export default PublicRoute;

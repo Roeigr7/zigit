@@ -14,7 +14,7 @@ interface LoginState {
 const initialState = {
   loading: false,
   error: null,
-  user: {},
+  user: JSON.parse(sessionStorage.getItem('token') || '{}'),
 };
 
 const LoginReducer = (

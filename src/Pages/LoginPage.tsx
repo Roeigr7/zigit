@@ -24,6 +24,7 @@ const LoginPage: React.FC = () => {
     email: '',
     password: '',
   });
+
   const { tryLogin } = useActions();
   const { loading, error } = useSelector((state) => state.login);
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,8 +35,7 @@ const LoginPage: React.FC = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    tryLogin(formInput);
-    history.push('/info');
+    tryLogin(formInput, history);
   };
   return (
     <Container className='py-5'>

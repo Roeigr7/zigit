@@ -5,18 +5,15 @@ import { Provider } from 'react-redux';
 import { store } from './redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './Routes/PrivateRoute';
+import PublicRoute from './Routes/PublicRoute';
 
 function App() {
   return (
     <Router>
       <Switch>
         <Provider store={store}>
-          <Route exact path='/'>
-            <LoginPage />
-          </Route>
-          <PrivateRoute path='/info'>
-            <UserInfoPage />
-          </PrivateRoute>
+          <PublicRoute exact path='/' component={LoginPage} />
+          <PrivateRoute path='/info' component={UserInfoPage} />
         </Provider>
       </Switch>
     </Router>

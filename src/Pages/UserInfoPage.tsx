@@ -1,7 +1,9 @@
+import { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import UserProjects from '../components/UserProjects';
 import { useSelector } from '../hooks/useTypedSelector';
 import UserDetails from '../components/UserDetails';
+import { useActions } from '../hooks/useActions';
 
 const UserInfoPage: React.FC = () => {
   const { user } = useSelector((state) => state.login);
