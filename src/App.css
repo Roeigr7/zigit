@@ -1,0 +1,12 @@
+.lessThen70 {
+  background-color: red !important;
+}
+.greaterThen90 {
+  background-color: green !important;
+}
+
+.login-button {
+  margin: 20px auto !important;
+  display: flex !important;
+  padding: 10px 30px !important;
+}
