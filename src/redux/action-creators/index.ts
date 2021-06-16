@@ -34,3 +34,14 @@ export const tryLogin = (formInput: ILoginInput, history: any) => {
     }
   };
 };
+
+export const logout = () => {
+  console.log('c888s8');
+  return async (dispatch: Dispatch<Action>) => {
+    sessionStorage.removeItem('token');
+    dispatch({
+      type: ActionType.LOGOUT,
+      payload: {},
+    });
+  };
+};

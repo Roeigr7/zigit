@@ -6,17 +6,18 @@ import { store } from './redux';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import PrivateRoute from './Routes/PrivateRoute';
 import PublicRoute from './Routes/PublicRoute';
-
+import MenuNavbar from './components/MenuNavbar';
 function App() {
   return (
-    <Router>
-      <Switch>
-        <Provider store={store}>
+    <Provider store={store}>
+      <Router>
+        <MenuNavbar />
+        <Switch>
           <PublicRoute exact path='/' component={LoginPage} />
           <PrivateRoute path='/info' component={UserInfoPage} />
-        </Provider>
-      </Switch>
-    </Router>
+        </Switch>
+      </Router>
+    </Provider>
   );
 }
 

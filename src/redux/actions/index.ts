@@ -12,4 +12,8 @@ interface LoggedUser {
   type: ActionType.LOGGED_USER;
   payload: object;
 }
-export type Action = TryLogin | LoginError | LoggedUser;
+interface Logout {
+  type: ActionType.LOGOUT;
+  payload: object;
+}
+export type Action = TryLogin | LoginError | LoggedUser | Logout;

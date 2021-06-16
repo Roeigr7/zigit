@@ -40,6 +40,12 @@ const LoginReducer = (
         loading: false,
         user: action.payload,
       };
+    case ActionType.LOGOUT:
+      return {
+        error: null,
+        loading: false,
+        user: action.payload,
+      };
     default:
       return state;
   }
